@@ -18,7 +18,9 @@ export async function GET(req) {
     // console.log("Executing Stored Procedure: USP_GetLocations with", { LocationCode });
 
     const result = await request.execute("USP_GetLocations");
-
+    console.log("Stored Procedure Result:", result);
+    
+    
     return NextResponse.json(
       { status: true, data: result.recordset },
       { status: 200 }
